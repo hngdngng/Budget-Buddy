@@ -5,18 +5,22 @@ const compression = require("compression");
 
 const PORT = 3000;
 
+// initialize express application
 const app = express();
-
+// initialize logger and specify format 'dev'
 app.use(logger("dev"));
-
+// initialize compression middleware
 app.use(compression());
+// JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+// load static assets in public directory
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 
