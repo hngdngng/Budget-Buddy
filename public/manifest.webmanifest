@@ -1,6 +1,6 @@
 {
-    "name": "Images App",
-    "short_name": "Images App",
+    "name": "Budget Buddy",
+    "short_name": "Budget Buddy",
     "icons": [
       {
         "src": "/assets/icons/android-chrome-192x192.png",
