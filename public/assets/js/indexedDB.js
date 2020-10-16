@@ -59,7 +59,7 @@ function checkDatabase() {
                     const store = transaction.objectStore("pending");
 
                     // clear all items in store
-                    // store.clear();
+                    store.clear();
                 });
         }
     };
